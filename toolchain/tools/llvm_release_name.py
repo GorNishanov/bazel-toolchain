@@ -65,7 +65,7 @@ def _ubuntu_osname(arch, version, major_llvm_version, llvm_version):
         os_name = "linux-gnu-ubuntu-20.10"
     elif is_llvm_major_release:
         if major_llvm_version >= 15:
-            os_name = "unknown-linux-gnu-sles15"
+            os_name = "unknown-linux-gnu"
         elif major_llvm_version >= 14:
             os_name = "linux-gnu-ubuntu-18.04"
         elif major_llvm_version >= 11:
@@ -79,7 +79,7 @@ def _ubuntu_osname(arch, version, major_llvm_version, llvm_version):
     else:
         # Availability may be sparse for patch releases.
         if llvm_version in ["15.0.2"]:
-            os_name = "unknown-linux-gnu-sles15"
+            os_name = "unknown-linux-gnu"
         elif llvm_version in ["13.0.1"]:
             os_name = "linux-gnu-ubuntu-18.04"
         elif llvm_version in ["12.0.1", "11.1.0", "11.0.1", "10.0.1", "9.0.1", "8.0.1"]:
