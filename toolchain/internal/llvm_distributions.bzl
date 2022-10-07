@@ -312,7 +312,10 @@ def _distribution_urls(rctx):
 
     sha256 = _llvm_distributions[basename]
 
-    strip_prefix = basename[:(len(basename) - len(".tar.xz"))]
+    if basename == "clang+llvm-15.0.2-x86_64-unknown-linux-gnu-sles15.tar.xz":
+        strip_prefix = "clang+llvm-15.0.2-x86_64-unknown-linux-gnu"
+    else:
+        strip_prefix = basename[:(len(basename) - len(".tar.xz"))]
 
     return urls, sha256, strip_prefix
 
